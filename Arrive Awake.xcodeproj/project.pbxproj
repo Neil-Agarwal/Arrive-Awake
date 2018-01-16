@@ -15,6 +15,7 @@
 		28A1E0382002DACE00707083 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28A1E0362002DACE00707083 /* LaunchScreen.storyboard */; };
 		28A1E0432002DACF00707083 /* Arrive_AwakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1E0422002DACF00707083 /* Arrive_AwakeTests.swift */; };
 		28A1E04E2002DACF00707083 /* Arrive_AwakeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1E04D2002DACF00707083 /* Arrive_AwakeUITests.swift */; };
+		28D770A320074B8D00AE54B0 /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D770A220074B8D00AE54B0 /* LocationSearchTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		28A1E0492002DACF00707083 /* Arrive AwakeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Arrive AwakeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28A1E04D2002DACF00707083 /* Arrive_AwakeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrive_AwakeUITests.swift; sourceTree = "<group>"; };
 		28A1E04F2002DACF00707083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28D770A220074B8D00AE54B0 /* LocationSearchTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				28A1E02B2002DACE00707083 /* AppDelegate.swift */,
 				28A1E02D2002DACE00707083 /* FirstViewController.swift */,
+				28D770A220074B8D00AE54B0 /* LocationSearchTable.swift */,
 				28A1E02F2002DACE00707083 /* SecondViewController.swift */,
 				28A1E0312002DACE00707083 /* Main.storyboard */,
 				28A1E0342002DACE00707083 /* Assets.xcassets */,
@@ -268,6 +271,7 @@
 				28A1E0302002DACE00707083 /* SecondViewController.swift in Sources */,
 				28A1E02C2002DACE00707083 /* AppDelegate.swift in Sources */,
 				28A1E02E2002DACE00707083 /* FirstViewController.swift in Sources */,
+				28D770A320074B8D00AE54B0 /* LocationSearchTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +522,7 @@
 				28A1E0542002DACF00707083 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		28A1E0552002DACF00707083 /* Build configuration list for PBXNativeTarget "Arrive AwakeTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +531,7 @@
 				28A1E0572002DACF00707083 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		28A1E0582002DACF00707083 /* Build configuration list for PBXNativeTarget "Arrive AwakeUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +540,7 @@
 				28A1E05A2002DACF00707083 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
