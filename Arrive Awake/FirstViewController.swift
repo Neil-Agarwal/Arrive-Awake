@@ -10,9 +10,11 @@ import UIKit
 import MapKit
 import CoreLocation
 
+
+
 protocol HandleMapSearch {
     func dropPinZoomIn(placemark:MKPlacemark)
-    func drawRadius(placemark: MKPlacemark)
+    func drawRadius(placemark: MKPlacemark, radius: Double)
 }
 
 
@@ -26,8 +28,11 @@ class FirstViewController: UIViewController, MKMapViewDelegate{
     let DEFAULTRADIUS = 500.00
     
     
+    
     // MARK: Outlets
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var radiusSlider: UISlider!
+    @IBOutlet weak var radiusLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -49,6 +54,8 @@ class FirstViewController: UIViewController, MKMapViewDelegate{
         searchBar.sizeToFit()
         searchBar.placeholder = "Enter Location"
         navigationItem.titleView = resultSearchController?.searchBar
+        
+        self.tabBarController?.tabBar.isHidden = false
         
         resultSearchController?.hidesNavigationBarDuringPresentation = false
         resultSearchController?.dimsBackgroundDuringPresentation = true
@@ -76,6 +83,16 @@ class FirstViewController: UIViewController, MKMapViewDelegate{
         }
         return MKOverlayRenderer(overlay: overlay)
     }
+    
+    @IBAction func radiusValueChanged(_ sender: UISlider) {
+        if selectedPin?.location?.coordinate != nil {
+            let roundedRadius = ceil(sender.value)
+            radiusLabel.text = (String(Int(roundedRadius)) + "m")
+            drawRadius(placemark: selectedPin!, radius: Double(roundedRadius))
+        }
+        
+    }
+    
 }
 extension FirstViewController : CLLocationManagerDelegate {
     
@@ -100,13 +117,12 @@ extension FirstViewController : CLLocationManagerDelegate {
 }
 extension FirstViewController: HandleMapSearch {
     func dropPinZoomIn(placemark:MKPlacemark){
-        
-        print (placemark.location?.coordinate)
         // cache the pin
         selectedPin = placemark
         
         // clear existing annotations
         mapView.removeAnnotations(mapView.annotations)
+        
         let pinAnnotation = MKPointAnnotation()
         pinAnnotation.coordinate = placemark.coordinate
         pinAnnotation.title = placemark.name
@@ -120,12 +136,31 @@ extension FirstViewController: HandleMapSearch {
         let region = MKCoordinateRegionMake(placemark.coordinate, span)
         mapView.setRegion(region, animated: true)
     }
-    func drawRadius(placemark: MKPlacemark) {
+    func drawRadius(placemark: MKPlacemark, radius: Double) {
+        var newRadius = radius
         //Removes Overlays
         mapView.removeOverlays(mapView.overlays)
         let location = placemark.location!
-        let circle = MKCircle(center: location.coordinate, radius:DEFAULTRADIUS)
+        if newRadius == -1.0 {
+            newRadius = DEFAULTRADIUS
+        }
+        let circle = MKCircle(center: location.coordinate, radius:newRadius)
         mapView.add(circle)
+        
+        //Hide tab Bar
+        self.tabBarController?.tabBar.isHidden = true
+        
+        //Show Slider
+        //radiusLabel.text = (String(newRadius) + "m")
+        //radiusSlider.value = Float(DEFAULTRADIUS)
+        //self.UISlider
+        
+        //Dynamic Zoom
+        let currentRadiusSlider: Double = (Double(radiusSlider.value)) / 27500.00
+        let span = MKCoordinateSpanMake(currentRadiusSlider , currentRadiusSlider)
+        let region = MKCoordinateRegionMake(placemark.coordinate, span)
+        mapView.setRegion(region, animated: true)
+        
     }
 }
 
