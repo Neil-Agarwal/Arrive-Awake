@@ -33,7 +33,7 @@ class LocationSearchTable : UITableViewController {
             // city
             selectedItem.locality ?? "",
             secondSpace,
-            // state
+            // province
             selectedItem.administrativeArea ?? ""
         )
         return addressLine

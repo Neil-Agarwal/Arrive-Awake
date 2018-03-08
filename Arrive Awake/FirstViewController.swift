@@ -27,13 +27,12 @@ class FirstViewController: UIViewController, MKMapViewDelegate{
     var circle:MKOverlay? = nil
     let DEFAULTRADIUS = 500.00
     
-    
-    
     // MARK: Outlets
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var radiusSlider: UISlider!
     @IBOutlet weak var radiusLabel: UILabel!
-    
+    @IBOutlet weak var setLocationButton: UIButton!
+    @IBOutlet weak var sliderLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +45,11 @@ class FirstViewController: UIViewController, MKMapViewDelegate{
         //Request user location once
         locationManager.requestLocation()
         
+        radiusLabel.isHidden = true
+        radiusSlider.isHidden = true
+        setLocationButton.isHidden = true
+        sliderLabel.isHidden = true
+        
         let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
         resultSearchController = UISearchController(searchResultsController: locationSearchTable)
         resultSearchController?.searchResultsUpdater = locationSearchTable
@@ -54,8 +58,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate{
         searchBar.sizeToFit()
         searchBar.placeholder = "Enter Location"
         navigationItem.titleView = resultSearchController?.searchBar
-        
-        self.tabBarController?.tabBar.isHidden = false
+    
         
         resultSearchController?.hidesNavigationBarDuringPresentation = false
         resultSearchController?.dimsBackgroundDuringPresentation = true
@@ -147,13 +150,14 @@ extension FirstViewController: HandleMapSearch {
         let circle = MKCircle(center: location.coordinate, radius:newRadius)
         mapView.add(circle)
         
-        //Hide tab Bar
-        self.tabBarController?.tabBar.isHidden = true
+        // Modify UI to allow user to set location
+        sliderLabel.isHidden = false
+        radiusLabel.isHidden = false
+        radiusSlider.isHidden = false
+        setLocationButton.isHidden = false
+        self.view.bringSubview(toFront:radiusSlider)
+        self.view.bringSubview(toFront:radiusLabel)
         
-        //Show Slider
-        //radiusLabel.text = (String(newRadius) + "m")
-        //radiusSlider.value = Float(DEFAULTRADIUS)
-        //self.UISlider
         
         //Dynamic Zoom
         let currentRadiusSlider: Double = (Double(radiusSlider.value)) / 27500.00
