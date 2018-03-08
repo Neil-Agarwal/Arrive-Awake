@@ -11,7 +11,6 @@
 		28A1E02E2002DACE00707083 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1E02D2002DACE00707083 /* FirstViewController.swift */; };
 		28A1E0302002DACE00707083 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1E02F2002DACE00707083 /* SecondViewController.swift */; };
 		28A1E0332002DACE00707083 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28A1E0312002DACE00707083 /* Main.storyboard */; };
-		28A1E0352002DACE00707083 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28A1E0342002DACE00707083 /* Assets.xcassets */; };
 		28A1E0382002DACE00707083 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28A1E0362002DACE00707083 /* LaunchScreen.storyboard */; };
 		28A1E0432002DACF00707083 /* Arrive_AwakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1E0422002DACF00707083 /* Arrive_AwakeTests.swift */; };
 		28A1E04E2002DACF00707083 /* Arrive_AwakeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1E04D2002DACF00707083 /* Arrive_AwakeUITests.swift */; };
@@ -41,7 +40,6 @@
 		28A1E02D2002DACE00707083 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		28A1E02F2002DACE00707083 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		28A1E0322002DACE00707083 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		28A1E0342002DACE00707083 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28A1E0372002DACE00707083 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28A1E0392002DACE00707083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28A1E03E2002DACF00707083 /* Arrive AwakeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Arrive AwakeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,7 +104,6 @@
 				28D770A220074B8D00AE54B0 /* LocationSearchTable.swift */,
 				28A1E02F2002DACE00707083 /* SecondViewController.swift */,
 				28A1E0312002DACE00707083 /* Main.storyboard */,
-				28A1E0342002DACE00707083 /* Assets.xcassets */,
 				28A1E0362002DACE00707083 /* LaunchScreen.storyboard */,
 				28A1E0392002DACE00707083 /* Info.plist */,
 			);
@@ -242,7 +239,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				28A1E0382002DACE00707083 /* LaunchScreen.storyboard in Resources */,
-				28A1E0352002DACE00707083 /* Assets.xcassets in Resources */,
 				28A1E0332002DACE00707083 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,6 +13,7 @@ import os.log
 class LocationSearchTable : UITableViewController {
     var matchingItems:[MKMapItem] = []
     var mapView: MKMapView? = nil
+    var handleMapSearchDelegate:HandleMapSearch? = nil
     
     func parseAddress(selectedItem:MKPlacemark) -> String {
         // put a space between number and street
@@ -32,7 +33,7 @@ class LocationSearchTable : UITableViewController {
             // city
             selectedItem.locality ?? "",
             secondSpace,
-            // state
+            // province
             selectedItem.administrativeArea ?? ""
         )
         return addressLine
@@ -60,13 +61,21 @@ extension LocationSearchTable {
     override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return matchingItems.count
     }
-    override
-    public  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+    override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         let selectedItem = matchingItems[indexPath.row].placemark
         cell.textLabel?.text = selectedItem.name
         cell.detailTextLabel?.text = parseAddress(selectedItem: selectedItem)
         return cell
+    }
+}
+
+extension LocationSearchTable {
+    override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        let selectedItem = matchingItems[indexPath.row].placemark
+        handleMapSearchDelegate?.dropPinZoomIn(placemark: selectedItem)
+        handleMapSearchDelegate?.drawRadius(placemark: selectedItem, radius: -1.0)
+        dismiss(animated: true, completion: nil)
     }
 }
