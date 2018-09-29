@@ -14,6 +14,7 @@
 		28A1E0382002DACE00707083 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28A1E0362002DACE00707083 /* LaunchScreen.storyboard */; };
 		28A1E0432002DACF00707083 /* Arrive_AwakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1E0422002DACF00707083 /* Arrive_AwakeTests.swift */; };
 		28A1E04E2002DACF00707083 /* Arrive_AwakeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1E04D2002DACF00707083 /* Arrive_AwakeUITests.swift */; };
+		28A9977F215FE0CA00BFFC3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28A9977E215FE0CA00BFFC3A /* Assets.xcassets */; };
 		28D770A320074B8D00AE54B0 /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D770A220074B8D00AE54B0 /* LocationSearchTable.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		28A1E0492002DACF00707083 /* Arrive AwakeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Arrive AwakeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28A1E04D2002DACF00707083 /* Arrive_AwakeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrive_AwakeUITests.swift; sourceTree = "<group>"; };
 		28A1E04F2002DACF00707083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28A9977E215FE0CA00BFFC3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28D770A220074B8D00AE54B0 /* LocationSearchTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +107,7 @@
 				28A1E02F2002DACE00707083 /* SecondViewController.swift */,
 				28A1E0312002DACE00707083 /* Main.storyboard */,
 				28A1E0362002DACE00707083 /* LaunchScreen.storyboard */,
+				28A9977E215FE0CA00BFFC3A /* Assets.xcassets */,
 				28A1E0392002DACE00707083 /* Info.plist */,
 			);
 			path = "Arrive Awake";
@@ -239,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28A1E0382002DACE00707083 /* LaunchScreen.storyboard in Resources */,
+				28A9977F215FE0CA00BFFC3A /* Assets.xcassets in Resources */,
 				28A1E0332002DACE00707083 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
